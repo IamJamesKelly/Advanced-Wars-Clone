@@ -1,0 +1,1008 @@
+body
+{
+overflow:hidden;
+margin:0;
+padding:0;
+background-image: url(BuildingMenu.png);
+background-repeat: no-repeat;
+background-size: 100%;
+}
+.hero-unit{
+	z-index: 0;
+}
+.left
+{
+	width: 33%;
+	display: inline-block;
+}
+.right
+{
+	width: 33%;
+	display: inline-block;
+}
+#splashScreen
+{
+	position: absolute;
+	width: 33%;
+	left: 33%;
+	top: 25%;
+	height: 50%;
+	z-index: 100000000000000000000000000000000000000000000;
+}
+#infoBox
+{
+	display: none;
+	position: absolute;
+	width: 33%;
+	left: 33%;
+	z-index: 100000000000000000000000000000000000000000000;
+}
+#signinButton
+{
+	position: relative;
+	left: 10px;
+	display: inline-block;
+}
+.middle
+{
+	width: 33%;
+	display: inline-block;
+}
+.selected
+{
+	border:  1px solid rgba(0,0,0,1);
+}
+#lobbyName
+{
+	display: inline-block;
+	width: auto;
+	height: 30px;
+	min-width: 16px;
+	padding: 4px 5px;
+	font-size: 14px;
+	font-weight: normal;
+	line-height: 20px;
+	text-align: center;
+	text-shadow: 0 1px 0 #ffffff;
+	border: 1px solid #ccc;
+}
+#selectJoin
+{
+	position:relative; 
+	left: 5%;
+	width: 90%;
+	top: 5%;
+	display: inline-block;
+	margin-top: 1%;
+}
+#header
+{
+	position: relative;
+	left:5%;
+	top: 5%;
+	width:90%;
+	height: 5%;
+	margin: 0px;
+	padding: 0px;
+	display: inline-block;
+}
+#Lobbyselect
+{
+	position: relative;
+	display: none;
+	width: 60%;
+	height: 70%;
+	left:20%;
+	top: 15%;
+}
+#lobbylist li
+{
+	background-color: rgb(214, 214, 214);
+}
+#lobbylist li:hover
+{
+	background-color: rgb(255, 255, 255);
+}
+#lobbylist
+{
+	position: relative;
+	width: 90%;
+	height: 40%;
+	left:5%;
+	top:0%;
+	overflow-x: hidden;
+	margin: 0px;
+	padding: 0px;
+	overflow-y: scroll;
+}
+#playerNumOnline
+{
+	display: inline-block;
+	width: auto;
+	height: 30px;
+	min-width: 16px;
+	padding: 4px 5px;
+	font-size: 14px;
+	font-weight: normal;
+	line-height: 20px;
+	text-align: center;
+	text-shadow: 0 1px 0 #ffffff;
+	border: 1px solid #ccc;
+}
+.name
+{
+	font-size: 25px;
+	height: 30px
+	display: inline;
+	position:relative;
+}
+.teamcolor
+{
+	display: inline;
+	right: 20px;
+	position:absolute;
+	margin: 0px;
+	font-size: 25px;
+}
+#LobbyName
+{
+	text-align:center;
+	width: 100%;
+	position:relative;
+	margin: 0px;
+	font-size: 25px;
+	border: 0px solid #c4c8cc;
+}
+
+#MugShot0{
+	display: inline-block;
+	position: relative;
+	top:0%;
+	width:100%;
+	border-bottom: 4px solid;
+	border-top: 4px solid;
+	border-color:rgb(0, 0, 0);
+}
+#MugShot1
+{
+	position: relative;
+	width:100%;
+	display: inline-block;
+	border-bottom: 4px solid;
+	border-top: 4px solid;
+	border-color:rgba(0, 0, 0,1);
+}
+#MugShot2{
+	position: relative;
+	width:100%;
+	border-color:rgba(0, 0, 0,1);
+	display: inline-block;	
+	display: none;
+	border-bottom: 4px solid;
+}
+#MugShot3{
+	position: relative;
+	width:100%;	
+	display: inline-block;
+	display: none;
+	border-bottom: 4px solid;
+	border-color:rgba(0, 0, 0,1);
+}
+
+#tagName
+{
+	border: 10px solid #c4c8cc;
+	top:0px;
+	left:0px;
+	padding: 0px;
+	margin:0px;
+	font-size: 15px;
+	font-family: "Palatino Linotype";
+	display: inline;
+	-webkit-border-bottom-left-radius: 5px;
+	-webkit-border-bottom-right-radius: 5px;
+}
+.layer
+{
+width: 100%;
+height: 100%;
+}
+#buildTile{
+
+border: 10px solid #c4c8cc;
+top:0px;
+left:0px;
+padding: 0px;
+margin:0px;
+font-size: 25px;
+font-family: "Palatino Linotype";
+width: 100px;
+
+-moz-border-radius-bottomright: 5px;
+-moz-border-radius-bottomleft: 5px;
+-webkit-border-bottom-left-radius: 5px;
+-webkit-border-bottom-right-radius: 5px;	
+}
+#playerPanel{
+top:0px;
+left:0px;
+width: 320px;
+height: 250px;
+background-size: 100%;
+background-repeat: repeat-y;
+background-image: url(PlayerInfo.png);
+display: none;
+z-index: 4;
+position:absolute;	
+}
+#PlayerDetails
+{
+position:absolute;
+z-index: 0;
+display:inline-block;
+top:0%;
+width:15%;
+height:70%;
+border: 10px solid #c4c8cc;
+font-size: 25px;
+-moz-border-radius-bottomright: 5px;
+-moz-border-radius-bottomleft: 5px;
+-webkit-border-bottom-left-radius: 5px;
+-webkit-border-bottom-right-radius: 5px;
+border-top: 5px solid rgba(0,0,0,1);
+border-left: 5px solid rgba(0,0,0,1);
+
+border-bottom: 5px solid rgba(0,0,0,1);
+}
+#selectedUnit{
+z-index: 0;
+left: 30%;
+bottom: 0px;
+-moz-border-radius-bottomright: 5px;
+-moz-border-radius-bottomleft: 5px;
+-webkit-border-bottom-left-radius: 5px;
+-webkit-border-bottom-right-radius: 5px;
+width:30%;
+height:29.5%;
+border-right: 5px solid rgba(0,0,0,1);
+position:absolute;
+}
+
+#Build
+{
+margin:0;
+padding:0;
+width: 120px;
+height: 26px;
+bottom: 10px;
+right: 70px;
+z-index: 4;
+text-align: center;
+background-repeat: no-repeat;
+font-size: 150%;
+line-height: 120%;
+display:none;
+position:absolute;	
+}
+#backUnitSelect{
+margin:0;
+padding:0;
+background-size: 100%;
+background-repeat: no-repeat;
+background-image: url(leftArrow.png);
+width: 8%;
+height: 16%;
+bottom: 4%;
+left: 2%;
+z-index: 4;
+display:none;
+position:absolute;
+}
+
+#forwardUnitSelect{
+margin:0;
+padding:0;
+background-size: 100%;
+background-repeat: no-repeat;
+background-image: url(rightArrow.png);
+width: 8%;
+height: 16%;
+bottom: 4%;
+right: 2%;
+z-index: 4;
+display:none;
+position:absolute;
+}
+#overlay{
+width: 100%;
+height: 100%;
+position:relative;
+}
+
+#buildingMenu{
+z-index: 0;
+bottom: 0%;
+left: 0%;
+width: 30%;
+height: 29.5%;
+border-right: 5px solid rgba(0,0,0,1);
+border-left: 5px solid rgba(0,0,0,1);
+display: inline-block;
+margin: 0px;
+padding: 0px;
+-moz-border-radius-bottomright: 5px;
+-moz-border-radius-bottomleft: 5px;
+-webkit-border-bottom-left-radius: 5px;
+-webkit-border-bottom-right-radius: 5px;
+position:absolute;
+}
+.styled-select{
+	width: 130px;
+	height: 34px;
+	display:inline-block;
+	padding: 0;
+	margin:0;
+	border: 0px;
+	background:#ffffff url(Arrow.png) no-repeat right;
+  
+}
+.styled-select option{
+	color: #000; 
+	background: #ffffff;
+	width: 160px;
+ 	border: 0px;
+}
+.styled-select select {
+   background: transparent;
+  -webkit-appearance: none;
+   width: 130px;
+   padding: 0px;
+   border: 0px;
+   font-size: 16px;
+   height: 34px;
+}
+
+.crop{
+	width: 130px;
+	height: 34px;
+	border: 0px;
+	overflow: hidden;
+	display:inline-block;
+	padding: 0;
+	margin:0;
+	border: 0px;
+	background: transparent;
+}
+.localPlayerTypes
+{
+	display:inline-block;
+	width: 130px;
+	height: 34px;
+	padding: 0;
+	margin:0;
+	border: 0px;
+	background: #ffffff url(Arrow.png) no-repeat right;
+}
+.localPlayerTypes option
+{
+	color: #000; 
+	background: #ffffff;
+	width: 160px;
+ 	border: 0px;
+}
+
+.localPlayerTypes select {
+   background: transparent;
+  -webkit-appearance: none;
+   width: 130px;
+   padding: 0px;
+   border: 0px;
+   font-size: 16px;
+   height: 34px;
+}
+.OnlinePlayerTypes 
+{
+	display:none;
+	width: 130px;
+	height: 34px;
+	padding: 0;
+	margin:0;
+	border: 0px;
+	background: transparent;
+	background: url(Arrow.png) no-repeat right;
+}
+.OnlinePlayerTypes option{
+	color: #000; 
+	background: #ffffff;
+	width: 160px;
+ 	border: 0px;
+}
+.OnlinePlayerTypes select 
+{
+   background: transparent;
+  -webkit-appearance: none;
+   width: 130px;
+   padding: 0px;
+   border: 0px;
+   font-size: 16px;
+   height: 34px;
+}
+#endturn
+{
+
+
+}
+#winTile
+{
+	text-align: center;
+	border-bottom: 1px solid #ccc;	
+}
+#returnMain
+{
+	position:absolute;
+	display: inline-block;
+	width:10%;	
+	bottom: 5%;
+	right: 5%;
+}
+.full
+{
+	opacity:1;
+	left:10%;
+}
+#winLose
+{
+	position:absolute;	
+	left: 15%;
+	top:15%;
+	opacity:1;
+	display: none;
+	width:70%;
+	z-index:1000;
+
+	background-image: -ms-radial-gradient(right bottom, circle farthest-side, #858585 0%, #FAFCF5 100%);
+	background-image: -moz-radial-gradient(right bottom, circle farthest-side, #858585 0%, #FAFCF5 100%);
+	background-image: -o-radial-gradient(right bottom, circle farthest-side, #858585 0%, #FAFCF5 100%);
+	background-image: -webkit-gradient(radial, right bottom, 0, right bottom, 973, color-stop(0, #858585), color-stop(1, #FAFCF5));
+	background-image: -webkit-radial-gradient(right bottom, circle farthest-side, #858585 0%, #FAFCF5 100%);
+	background-image: radial-gradient(circle farthest-side at right bottom, #858585 0%, #FAFCF5 100%);
+
+	-moz-border-radius-bottomright: 5px;
+	-moz-border-radius-bottomleft: 5px;
+	-moz-border-radius-topright: 5px;
+	-moz-border-radius-topleft: 5px;
+	-webkit-border-top-left-radius: 5px;
+	-webkit-border-top-right-radius: 5px;
+	-webkit-border-bottom-left-radius: 5px;
+	-webkit-border-bottom-right-radius: 5px;
+
+	border-bottom: 1px solid #ccc;	
+}
+#GameWorld
+{
+	position:relative;	
+	width:70%;
+	height:70%;
+	left:15%;
+	top:0%; 
+	display:inline-block;
+	display:none;
+	margin: 0;
+	border-top: 5px solid rgba(0,0,0,1);
+	border-left: 5px solid rgba(0,0,0,1);
+	border-bottom: 5px solid rgba(0,0,0,1);
+	border-right: 5px solid rgba(0,0,0,1);
+  	-moz-border-radius-bottomright: 5px;
+  	-moz-border-radius-bottomleft: 5px;
+ 	-webkit-border-bottom-left-radius: 5px;
+  	-webkit-border-bottom-right-radius: 5px;
+}
+#Begin
+{
+	top: 30%;
+	position:relative;
+	display: block;
+}
+#gameScreen 
+{
+	-moz-border-radius: 10px;
+	-webkit-border-radius: 10px;
+	border-radius: 10px; /* future proofing */
+	overflow:hidden;
+	width: 100%;
+	height: 100%;
+	z-index: 0;
+	display: none;
+}
+#Quitoptions
+{
+	position:absolute;
+	top: 0;
+	right: 0;
+	height: 159;
+	width:245;
+	z-index: 1;
+	display:none;
+	background-image: url(Quit.png);
+	background-repeat: no-repeat;
+}
+#endturn
+{
+	position:absolute;
+	right: 5%;
+	bottom: 10;
+	z-index: 2;
+	font-size: 150%;
+	line-height: 100%;
+	background-repeat: no-repeat;
+	border-style: none;
+	-webkit-transition: all .2s ease-in-out;
+}
+#Yes
+{
+	position:absolute;
+	left: 10;
+	bottom: 10;
+	height: 50;
+	width:95;
+	z-index: 2;
+	background-repeat: no-repeat;
+	background-image: url(Yes.png);
+	border-style: none;
+	-webkit-transition: all .2s ease-in-out;
+}
+#No
+{
+	position:absolute;
+	background-repeat: no-repeat;
+	background-image: url(No.png);
+	right: 10;
+	bottom: 10;
+	z-index: 2;
+	height: 50;
+	width:60;
+	border-style: none;
+	overflow:hidden;
+	margin:0;
+	padding:0;
+	-webkit-transition: all .2s ease-in-out;
+}
+#X
+{
+	position:absolute;
+	background-image: url(xexit.png);
+	top: 0;
+	right: 0;
+	z-index: 2;
+	height: 20;
+	width:20;
+	border-style: none;
+	overflow:hidden;
+	margin:0;
+	padding:0;
+	-webkit-transition: all .2s ease-in-out;
+}
+#X:hover
+{
+
+	-webkit-transform: scale(1.2); 
+}
+#No:hover
+{
+	-webkit-transform: scale(1.2); 
+}
+#No:hover
+{
+	-webkit-transform: scale(1.2); 
+}
+#Yes:hover
+{
+	-webkit-transform: scale(1.2); 
+}
+#endturn:hover
+{
+	-webkit-transform: scale(1.2); 
+}
+#Quit h1
+{
+	font-size: 25px;
+}
+#begin
+{
+	left:0px;
+	bottom:0px;
+}
+ul
+{
+	list-style-type: none;
+}
+#p1
+{
+	
+}
+#p2{
+	
+}
+.hidden
+{
+	display: none;	
+}
+#p3
+{
+	display: none;
+}
+#p4
+{
+	display: none;
+}
+li
+{
+	list-style-type:none;
+}
+.Playertitle
+{
+	margin: 0px;
+	font-size:50%;
+	text-align: center;
+	background-color: #eeeeee;
+	line-height: 100%;
+}
+.title
+{
+	font-size:100%;
+	width:20%;
+	position:relative;
+	margin: 0px;
+	padding:0px;
+	overflow:hidden;
+	display: inline;
+	border: 1px solid #ccc;
+	-moz-border-radius: 10px;
+	border-top-left-radius: 10px 5px;
+	border-bottom-left-radius: 10px 5px;
+	padding: 4px 7px;
+	outline: 0;
+}
+
+#numPlayers
+{
+	border: 1px solid #ccc;
+	-moz-border-radius: 10px;
+	border-top-right-radius: 10px 5px;
+	border-bottom-right-radius: 10px 5px;
+	padding: 4px 7px;
+	outline: 0;
+	position:relative;
+	display: inline;
+}
+#GameType
+{
+	border: 1px solid #ccc;
+	-moz-border-radius: 10px;
+	border-top-right-radius: 10px 5px;
+	border-bottom-right-radius: 10px 5px;
+	padding: 4px 7px;
+	outline: 0;
+	position:relative;
+	display: inline;
+}
+#levelSelect
+{
+	border: 1px solid #ccc;
+	-moz-border-radius: 10px;
+	border-top-right-radius: 10px 5px;
+	border-bottom-right-radius: 10px 5px;
+	padding: 4px 7px;
+	outline: 0;
+	position:relative;
+	display: inline;
+}
+#SetupMenu
+{
+	top:25%;
+	left:25%;
+	width:50%;
+	height:25%;
+	position:relative;
+	display: none;
+}
+#playerNum
+{
+	border: 1px solid #ccc;
+	-moz-border-radius: 10px;
+	border-top-right-radius: 10px 5px;
+	border-bottom-right-radius: 10px 5px;
+	padding: 4px 7px;
+	height:30px;
+	outline: 0;
+	position:relative;
+	display: inline;
+}
+#StartMenu
+{
+	top:30%;
+	left:33%;
+	width:33%;
+	display: none;
+	position:relative;
+}
+.hero-unit h3 .header
+{
+	margin: 10px 0;
+	font-family: inherit;
+	font-weight: bold;
+	line-height: 20px;
+	color: inherit;
+	text-rendering: optimizelegibility;
+	border-bottom: 4px solid;
+	border-color:rgb(0, 0, 0);
+}
+#signUp
+{
+	top:25%;
+	left:37.5%;
+	width:25%;
+	position:relative;
+	display:none;
+}
+#signUp h4
+{
+	display: inline;
+	width: 10%;
+	position:relative;
+}
+#signIn
+{
+	top:25%;
+	left:37.5%;
+	width:25%;
+	display:inline-block;
+	position:relative;
+}
+#signIn input
+{
+	position:relative;
+}
+#signIn h4
+{
+	display: block;
+	width: 100%;
+	position:relative;
+}
+.Startbtn
+{
+	
+} 
+#Profile
+{
+	position:absolute;
+	width: 15%;
+	display: inline;
+	display: none;
+	left: 0px;
+	top:0px;
+}
+.profile
+{
+	position: relative;
+	padding: 0px;
+	margin: 0px;
+	display: inline;
+	border-bottom: 1px solid rgb(255, 0, 0);
+	
+	height: 1%;
+}
+.inforight
+{
+	display: inline;
+	position: absolute;
+	font-size: 100%;
+	right: 2%;
+}
+.infoleft
+{
+	display: inline;
+	position: relative;
+	font-size: 100%;
+	left: 0px;
+}
+#createAccountMenu
+{
+	display: inline-block;
+	color: rgb(0, 0, 0);
+	margin: 0px;
+}
+#createAccountMenu:hover
+{
+	color: rgb(57, 184, 216);
+}
+#signUp input
+{
+	right:5%;
+	position: absolute;
+}
+.Startbtn:hover
+{
+	background-color :white;  
+	border-bottom-style:solid;
+	border-bottom-color:#ff0000;
+	border-left-style:solid;
+	border-left-color:#ff0000;
+	border-right-style:solid;
+	border-right-color:#ff0000;
+
+    -webkit-transition-duration: 1s, 1s; 
+	-webkit-transition: all .1s ease-in-out;
+}
+.StartHeader
+{
+	background-color :white; 
+	border-top-style:solid;
+	border-top-color:#ff0000;
+	border-left-style:solid;
+	border-left-color:#ff0000;
+	border-right-style:solid;
+	border-right-color:#ff0000;
+	width:50%;
+	padding: 0px;
+	font-size: 25px;
+	margin-left: auto ;
+ 	margin-right: auto ;
+ 	text-align: center;
+ 	border-top-left-radius: 25px 25px;
+	border-top-right-radius: 25px 25px;
+}
+.Box
+{
+	display: inline-block;
+	width: 2.5%;
+	height:5%;
+}
+#OrangeBox
+{
+	background-color: orange;
+}
+#BlueBox
+{
+	background-color: blue;
+}
+#YellowBox
+{
+	background-color: yellow;
+}
+#GreenBox
+{
+	background-color: green;
+}
+#OnlineMenu
+{
+	display: none;
+	top:30%;
+	left:33%;
+	width:33%;
+	position:relative;
+}
+#Create
+{
+	display: none;
+	top:30%;
+	left:33%;
+	width:33%;
+	position:relative;
+}
+#Submit
+{
+	z-index: 2;
+	height:30;
+	width:70;
+	right: 0px;
+	top: 5px;
+	padding: 0px;
+	font-size: 30px;
+	display: inline;
+	position:relative;
+	border: 2px solid #c4c8cc;
+}
+#Submit:hover
+{
+	z-index: 2;
+	height:30;
+	width:70;
+	right: 0px;
+	top: 5px;
+	padding: 0px;
+	font-size: 30px;
+	display: inline;
+	position:relative;
+	background-color :white; 
+	border: 2px solid #c4c8cc;
+	-moz-border-radius-bottomright: 15px;
+	-moz-border-radius-bottomleft: 15px;
+	-webkit-border-bottom-left-radius: 15px;
+	-webkit-border-bottom-right-radius: 15px;
+	-moz-border-radius-topright: 15px;
+	-moz-border-radius-topleft: 15px;
+	-webkit-border-top-left-radius: 15px;
+	-webkit-border-top-right-radius: 15px;
+	-webkit-transition-duration: 1s, 1s; 
+	-webkit-transition: all .1s ease-in-out;
+}
+#Join:hover
+{
+	
+}
+#Join
+{
+	position: absolute;
+	width: 10%;
+	right: 5%;
+	display: inline;
+}
+.lobbyHead
+{
+	border-bottom: 1px solid #ccc;
+	font-size: 25px;
+}
+.name
+{
+ 	display: inline;
+}
+input.name
+{
+ 	height: 35px;
+ 	display: inline;
+}
+.lobbyHead .name
+{
+	left: 0px;
+	display: inline;
+}
+.lobbyHead .teamcolor
+{
+	right: 20px;
+}
+#lobby
+{
+	width: 70%;
+	left: 15%;
+	top:15%;
+	position: relative;
+	display: none;
+}
+#Begin
+{
+	width: 10%;
+	height: 15%;
+	top: 80%;
+	left:85%;
+	display: inline;
+	position:absolute;
+}
+#lobby:h1
+{
+	display: inline;
+}
+#lobbyP1
+{
+	display: none;
+	border-bottom: 1px solid #ccc;
+}
+#lobbyP2
+{
+	display: none;
+	border-bottom: 1px solid #ccc;	
+}
+#lobbyP3
+{
+	display: none;
+	border-bottom: 1px solid #ccc;	
+}
+#lobbyP4
+{
+	display: none;
+	border-bottom: 1px solid #ccc;	
+}
+#setName
+{
+	display: none;
+}

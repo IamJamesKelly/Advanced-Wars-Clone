@@ -1,0 +1,293 @@
+<html>
+	<script src ="JavaScript/jQuery.js"></script>
+	<script src ="quo.js"></script>
+	<script src ="node_modules/socket.io-client/dist/socket.io.js"></script>
+	<script src ="JavaScript/Class/BufferLoader.js"></script>
+	<script src ="JavaScript/Class/GameData.js"></script>
+	<script src ="JavaScript/tileData/TileStructs.js"></script>
+	<script src ="JavaScript/Class/Infobox.js"></script>
+	<script src ="JavaScript/Class/Account.js"></script>
+	<script src ="JavaScript/Class/WinLoseScreen.js"></script>
+	<script src ="JavaScript/Class/ConnetedToServer.js"></script>
+	<script src ="JavaScript/Class/PlayerData.js"></script>
+	<script src ="JavaScript/Class/AudioPlayer.js"></script>
+	<script src ="JavaScript/Class/ConnetedToServer.js"></script>
+	<script src ="JavaScript/Class/Globals.js"></script>
+	<script src ="JavaScript/Class/Vector.js"></script>
+	<script src ="JavaScript/Class/Cell.js"></script>
+	<script src ="JavaScript/Class/Entity.js"></script>
+	<script src ="JavaScript/Class/Infantry.js"></script>
+	<script src ="JavaScript/Class/player.js"></script>
+	<script src ="JavaScript/Class/Buildings.js"></script>
+	<script src ="JavaScript/Class/BuildingMenu.js"></script>
+	<script src ="JavaScript/Class/BattleScreen.js"></script>
+	<script src ="JavaScript/Class/battleSprite.js"></script>
+	<script src ="JavaScript/Class/levelbuilder.js"></script>
+	<script src ="JavaScript/Class/unitFactory.js"></script>
+	<script src ="JavaScript/Class/unitInfoDisplay.js"></script>
+ 	<script src ="JavaScript/Class/Map.js"></script>
+ 	<script src ="JavaScript/Class/SetUpMenu.js"></script>
+ 	<script src ="JavaScript/Class/QuitMenu.js"></script>
+ 	<script src ="JavaScript/Class/PlayerHud.js"></script>
+ 	<script src ="JavaScript/Class/Game.js"></script>
+ 	<script src ="JavaScript/Main.js"></script>
+ 	<script src ="JavaScript/Class/OnlineMenu.js"></script>
+    <script src ="JavaScript/Class/googlePlus.js"></script>
+ 	<link href="css/bootstrap-responsive.css" rel="stylesheet" type="text/css">
+	<link href="Hud-Menu/style.css" rel="stylesheet" type="text/css">
+	<link href="css/bootstrap.css" rel="stylesheet" type="text/css">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	</script>
+	<body onload=" main()">
+		<div id ="gameScreen">
+			<div id  = "winLose">
+					<h4 class = "full winTile"></h4><br/>
+					<h4 class = "full"></h4><br/>
+					<h4 class = "full"></h4><br/>
+					<h4 class = "full"></h4><br/>
+					<h4 class = "full"></h4><br/>
+					<h4 class = "full"></h4><br/>
+			</div>
+			<div id = "screenInGame">
+				<div id ="PlayerDetails" >
+					<h4 class ="Playertitle">You</h4>
+					<canvas id  ="MugShot0"></canvas>
+					<h4 class ="Playertitle">Opposition</h4>
+					<canvas id ="MugShot1"></canvas>
+					<canvas id ="MugShot2"></canvas>
+					<canvas id ="MugShot3"></canvas>
+				</div>
+				<canvas id = "GameWorld"></canvas>
+				
+				<div id ="buildingMenu">
+					<canvas id = "overlay"></canvas>
+					<span id = "Build" class="badge badge-success">Build</span>
+					<span id = "backUnitSelect" class="badge badge-success"></span>
+					<span id = "forwardUnitSelect" class="badge badge-success"></span></span>
+				</div>
+				<div id ="selectedUnit">
+					<canvas class = "layer"></canvas>
+				</div>
+				<div id="Quit">
+					<image id ="X"></image>
+					<div id="Quitoptions">
+						<h1>Sure You want to Quit</h1>
+						<image id ="Yes"></image>
+						<image id="No" ></image>
+					</div>
+				</div>
+				<div  id ="endturn" class="progress progress-info progress-striped active">
+					<div class="bar endturn" style="width: 100%">endTurn</div>
+				</div>
+			</div>
+		</div>
+		<div class = "hero-unit" id ="SetupMenu">
+			<div>
+				<div class="input-prepend">
+					<span class="add-on">No. Players</span>
+					<input id = "playerNum" class="options" value=2 min=2 max = 4 id="numPlayers" type="number"></input>
+				</div>
+				&nbsp;&nbsp;
+				<div class="input-prepend">
+					<span class="add-on">Map</span>
+					<select class="options" id ="levelSelect">
+						<option value="Crossroads">Crossroads</option>
+					</select>
+				</div>
+				<ul >
+					<li id ="p1">
+							<div class="input-prepend">
+								<span class="add-on">P1</span>
+								<input class = "name" type="text"></input>
+							</div>
+							&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+							<div class="input-prepend">
+								<span class="add-on">Team</span>
+								<select id ="onlinecolor"class="Color">
+									<option value="Orange">Orange</option>
+									<option  value="Blue">Blue</option>
+									<option value="Yellow">Yellow</option>
+									<option value="Green">Green</option>
+								</select>
+							</div>
+					</li>
+					<li id ="p2">
+						<div class="input-prepend">
+							<span class="add-on">P2</span>
+							<input class = "name" type="text"></input>
+						</div>
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+						<div class="input-prepend">
+							<span class="add-on">Team</span>
+							<select id ="onlinecolor"class="Color">
+								<option value="Orange">Orange</option>
+								<option  value="Blue">Blue</option>
+								<option value="Yellow">Yellow</option>
+								<option value="Green">Green</option>
+							</select>
+						</div>
+					</li>
+					<li id ="p3">
+						<div class="input-prepend">
+							<span class="add-on">P3</span>
+							<input class = "name" type="text"></input>
+						</div>
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+						<div class="input-prepend">
+							<span class="add-on">Team</span>
+							<select id ="onlinecolor"class="Color">
+								<option value="Orange">Orange</option>
+								<option  value="Blue">Blue</option>
+								<option value="Yellow">Yellow</option>
+								<option value="Green">Green</option>
+							</select>
+						</div>
+					</li>
+					<li id ="p4">
+						<div class="input-prepend">
+							<span class="add-on">P4</span>
+							<input class = "name" type="text"></input>
+						</div>
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+						<div class="input-prepend">
+							<span class="add-on">Team</span>
+							<select id ="onlinecolor"class="Color">
+								<option value="Orange">Orange</option>
+								<option  value="Blue">Blue</option>
+								<option value="Yellow">Yellow</option>
+								<option value="Green">Green</option>
+							</select>
+						</div>
+					</li>
+				</ul>
+			</div>
+			<button class="btn btn-success" id ="Begin">Begin</button>
+		</div>
+		<div class = "hero-unit" id = "StartMenu">
+			<h3 class = "page-header">Start Menu</h3>
+			<ul Class = "nav nav-tabs nav-stacked">
+				<!--<li><a id ="Local" href="#">Local</a></li>-->
+				<li><a id ="Muitiplyer" href="#">online</a></li>
+			</ul>
+		<!--<div Class = "Startbtn" id ="Tutorial">Tutorial</div> -->
+		</div>
+		<div class = "hero-unit" id = "signUp">
+			<h3 class = "page-header">SignUp</h3>
+			<h4>UserName</h4><input type ="text" class="input-large" placeholder="UserName"></input><br/>
+			<h4>Email</h4><input class="input-large" type ="email" placeholder="Email"></input><br/>
+			<h4>Password</h4><input type="password" class="input-large" placeholder="Password"></input><br/>
+			<h4>Confirm Password</h4><input type="password" class="input-large" placeholder="Confirm Password" ></input><br/><br/>
+			<button  class="btn btn-success" id = "createAccount">Submit</button>	
+		</div>
+		<div class = "hero-unit" id = "signIn">
+			<h3 class = "page-header">SignIn</h3>
+			<h4>UserName</h4><input type ="text"  placeholder="UserName"></input><br/>
+			<h4>Password</h4><input class="input-large" placeholder="Password" type ="email"placeholder="Email"></input><br/>
+			<button class="btn btn-success" id = "playerSignIn">submit</button><br/>
+			<div id ="createAccountMenu">Create Account</div>
+			<br/>
+			<h4>SignIn With Google+</h4>
+			<span id="signinButton">
+				<span class="g-signin" 
+					data-callback="signinCallback" 
+					data-clientid="336529775219.apps.googleusercontent.com" 
+					data-cookiepolicy="http://localhost:8080"
+					data-requestvisibleactions="http://schemas.google.com/AddActivity"
+					data-scope="https://www.googleapis.com/auth/plus.login">
+				</span>
+			</span>
+		</div>
+		<div class = "hero-unit" id = "OnlineMenu">
+			<h3 class = "page-header">Online Menu</h3>
+			<ul Class = "nav nav-tabs nav-stacked">
+				<li><a id ="Quick" href="#">Quick Play</a></li>
+				<li><a id ="selectlobby" href="#">Select Lobby</a></li>
+				<li><a id ="CreateGame" href="#">Create Lobby</a></li>
+			</ul>
+		</div>
+		<div class = "hero-unit" id = "Create">
+			<div class="input-prepend">
+				<span class="add-on">Lobby Name</span>
+				<input id = "lobbyName" type="text"></input>
+			</div>
+			<br/>
+			<div class="input-prepend">
+				<span class="add-on">No. Players</span>
+				<input id = "playerNumOnline" value=2 min=2 max = 4 id="numPlayers" type="number"></input>
+			</div><br/>
+			<div class="input-prepend">
+				<span class="add-on">Map</span>
+				<select id = "onlineMap"class="options" id ="levelSelectOnline">
+					<option value="Crossroads">Crossroads</option>
+				</select>
+			</div><br/>
+			<div class="input-prepend">
+				<span class="add-on">Team</span>
+				<select id ="onlinecolor" class="Color">
+					<option value="Orange">Orange</option>
+					<option value="Blue">Blue</option>
+					<option value="Yellow">Yellow</option>
+					<option value="Green">Green</option>
+				</select>
+			</div>
+			<br/><br/>
+			<button class="btn btn-success" id ="CreateLobby">Create Lobby</button>
+		</div>
+		<div class = "hero-unit" id = "lobby">
+			<div id = "LobbyName"></div>
+			<div class = "lobbyHead" id="lobbyHead">
+				<div class = "name"></div>
+				<div class = "teamcolor"></div>
+			</div>
+			<div class = "lobbyHead"><div class = "name">Player</div><div class = "teamcolor">Team</div></div>
+			<div id = "lobbyP1" class = ""><h4 class = "name"></h4><h4 class = "teamcolor"></h4></div>
+			<div id = "lobbyP2" class = ""><h4 class = "name"></h4><h4 class = "teamcolor"></h4></div>
+			<div id = "lobbyP3" class = ""><h4 class = "name"></h4><h4 class = "teamcolor"></h4></div>
+			<div id = "lobbyP4" class = ""><h4 class = "name"></h4><h4 class = "teamcolor"></h4></div>
+			<div id = "setName">
+				<h1  class="title">Name</h1>
+				<input placeholder="Player Name" class="name" type="text"></input>
+				<h1  class="title">Color</h1>
+				<div class="styled-select">
+					<div class="crop">
+						<select class="Color">
+							<option  value="Orange">Orange</option>
+							<option  value="Blue">Blue</option>
+							<option  value="Yellow">Yellow</option>
+							<option  value="Green">Green</option>
+						</select>
+					</div>
+				</div>
+				<div id ="Submit">Submit</div>
+			</div>
+		</div>
+		<div class = "hero-unit" id = "Lobbyselect">
+			<h4 class = "Profile">Select Lobby</h4>
+			<br/>
+			<div class = "Profile" id="header">
+				<h4 class = 'left'>Lobby Name</h4><h4 class = 'middle'>Map</h4><h4 class = 'right'>PlayerIn/LobbySize</h4>
+			</div>
+			<ul id = "lobbylist" class = "nav nav-tabs nav-stacked well">
+			</ul>
+			<div id ="selectJoin">
+				<div name="Orange" id = "OrangeBox" class = "Box"></div>
+				<div name="Blue" id = "BlueBox" class = "Box"></div>
+				<div name="Yellow" id = "YellowBox" class = "Box"></div>
+				<div name="Green" id = "GreenBox" class = "Box"></div>
+				<div id ="Join" class= "btn btn-success">Join</div>
+			</div>
+		</div>
+		<div class = "hero-unit" id = "Profile">
+			<h4 class = "Profile"></h4>
+			<br/>
+			<h4 class = "infoleft">Losses</h4><h4 class = "inforight"></h4><br/>
+			<h4 class = "infoleft">Wins</h4><h4 class = "inforight"></h4><br/>
+			<h4 class = "infoleft">Games Played</h4><h4 class = "inforight"></h4><br/>
+		</div>
+		<div id = "infoBox" class="alert alert-block">
+		  <button  id = "infoBoxClose"  type="button" class="close" data-dismiss="alert">&times;</button>
+		  <h4>Warning!</h4>
+		  <p>Best check yo self, you're not...</p>
+		</div>
+	</body>
+</html>
